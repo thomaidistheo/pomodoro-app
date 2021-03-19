@@ -17,7 +17,7 @@ removeDisabled = () => {
 }
 
 optionOne.onclick = () => {
-    startingTime = 15
+    startingTime = 0.10
     time = startingTime * 60
 
     //display
@@ -52,8 +52,6 @@ optionFour.onclick = () => {
     removeDisabled()
 }
 
-
-
 function countDown() {
     if (!startingTime){
         alert('vale xrono prwta ougkane')  
@@ -68,6 +66,17 @@ function countDown() {
             mins.innerHTML = `${minutes}`
             secs.innerHTML = `${seconds}`
             time--
+
+            optionsMenu.classList.add('hide-options')
+            
+            document.body.style.backgroundColor = '#000'
+            document.body.style.color = '#F4F4F4'
+
+            if (time <= 0) {
+                clearInterval()
+            }
+
+            console.log(time)
         }, 1000)
     }
 }
