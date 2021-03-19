@@ -117,17 +117,25 @@ body {
   margin-right: 0;
 }
 
-.start-btn {
+.btns-container {
   margin-top: 20px;
+}
+
+.btns-container button {
   padding: 10px 30px;
   border: none;
   color: #F4F4F4;
-  background-color: #4558D3;
-  -webkit-box-shadow: 3px 3px #454545;
-          box-shadow: 3px 3px #454545;
 }
 
-.start-btn:disabled {
+.btns-container .start-btn {
+  background-color: #4558D3;
+}
+
+.btns-container .start-btn:disabled {
   background-color: #BCBCBC;
+}
+
+.btns-container .reset-btn {
+  background-color: #454545;
 }
 /*# sourceMappingURL=styles.css.map */

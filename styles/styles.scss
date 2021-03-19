@@ -78,17 +78,28 @@
     margin-right: 0;
 }
 
-.start-btn {
+.btns-container {
     margin-top: 20px;
-    padding: 10px 30px;
-    border: none;
+    
+    button {
+        padding: 10px 30px;
+        border: none;
+        color: $white;
+    }
 
-    color: $white;
-    background-color: $main-clr;
-    box-shadow: 3px 3px $black;
+    .start-btn {
+        background-color: $main-clr;
 
-    &:disabled {
-        background-color: $gray;
+        &:disabled {
+            background-color: $gray;
+        }
+    }
+
+    .reset-btn {
+        background-color: $black;
     }
 }
+
+
+
 
