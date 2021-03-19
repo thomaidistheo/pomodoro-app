@@ -16,43 +16,42 @@ removeDisabled = () => {
     startBtn.removeAttribute('disabled')
 }
 
+//display selected option in the timer
+displaySelectedTimer = () => {
+    mins.innerHTML = `${startingTime}`
+    removeDisabled()
+}
+
 optionOne.onclick = () => {
     startingTime = 0.10
     time = startingTime * 60
 
-    //display
-    mins.innerHTML = `${startingTime}`
-    removeDisabled()
+    displaySelectedTimer()
 }
 
 optionTwo.onclick = () => {
     startingTime = 30
     time = startingTime * 60
 
-    //display
-    mins.innerHTML = `${startingTime}`
-    removeDisabled()
+    displaySelectedTimer()
 }
 
 optionThree.onclick = () => {
     startingTime = 45
     time = startingTime * 60
 
-    //display
-    mins.innerHTML = `${startingTime}`
-    removeDisabled()
+    displaySelectedTimer()
 }
 
 optionFour.onclick = () => {
     startingTime = 60
     time = startingTime * 60
 
-    //display
-    mins.innerHTML = `${startingTime}`
-    removeDisabled()
+    displaySelectedTimer()
 }
 
 function countDown() {
+    //in case no time setting is selected, display message
     if (!startingTime){
         alert('vale xrono prwta ougkane')  
     } else {
@@ -60,22 +59,24 @@ function countDown() {
             let minutes = Math.floor(time/60)
             let seconds = time % 60
         
+            //add a 0 in front of single digit numbers
             minutes = minutes < 10 ? '0' + minutes : minutes
             seconds = seconds < 10 ? '0' + seconds : seconds
         
+            //display time left
             mins.innerHTML = `${minutes}`
             secs.innerHTML = `${seconds}`
             time--
 
-            optionsMenu.classList.add('hide-options')
+            //stop the countdown 
+            if (time <= 0) {
+                clearInterval(time = 0)
+            }
             
+            //DOM changes when timer is started
+            optionsMenu.classList.add('hide-options')
             document.body.style.backgroundColor = '#000'
             document.body.style.color = '#F4F4F4'
-
-            if (time <= 0) {
-                clearInterval()
-            }
-
             console.log(time)
         }, 1000)
     }
