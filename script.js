@@ -29,33 +29,42 @@ let timeSec
 
 optionOne.onclick = () => {
     timeMin = 0.1
-    timeSec = (timeMin * 60)
+    timeSec = (timeMin * 60)-1
 
     displaySelectedTimer()
 }
 
 optionTwo.onclick = () => {
     timeMin = 30
-    timeSec = (timeMin * 60)
+    timeSec = (timeMin * 60)-1
 
     displaySelectedTimer()
 }
 
 optionThree.onclick = () => {
     timeMin = 45
-    timeSec = (timeMin * 60)
+    timeSec = (timeMin * 60)-1
 
     displaySelectedTimer()
 }
 
 optionFour.onclick = () => {
     timeMin = 60
-    timeSec = (timeMin * 60)
+    timeSec = (timeMin * 60)-1
 
     displaySelectedTimer()
 }
 
 let startTimer = null
+
+function resetDOM() {
+    document.body.style.backgroundColor = '#F4F4F4'
+    document.body.style.color = '#454545'
+    document.title = 'Pomodoro App'
+    mins.innerHTML = '00'
+    secs.innerHTML = '00'
+    timeSec=0;
+}
 
 function stopCountDown() {
     clearInterval(startTimer)
@@ -78,20 +87,15 @@ function countDown() {
             //display time left
             mins.innerHTML = `${minutes}`
             secs.innerHTML = `${seconds}`
-            
-            timeSec--
 
             //stop the countdown 
             if (timeSec <= 0) {
                 stopCountDown()
             }
 
-            //DOM changes when timer is started
-            optionsMenu.classList.add('hide-options')
-            document.body.style.backgroundColor = '#000'
-            document.body.style.color = '#F4F4F4'
-            document.title = `${minutes}:${seconds}`
+            timeSec--
             
+            document.title = `${minutes}:${seconds}`
         }, 1000)
     }
 
@@ -101,17 +105,14 @@ function countDown() {
     }
 }
 
-resetDOM = () => {
-    document.body.style.backgroundColor = '#F4F4F4'
-    document.body.style.color = '#454545'
-    minutes=0
-    seconds=0
-    timeSec=0;
-}
-
 startBtn.onclick = () => {
     countDown()
     startBtn.setAttribute('disabled', "")
+
+    //DOM changes when timer is started
+    optionsMenu.classList.add('hide-options')
+    document.body.style.backgroundColor = '#000'
+    document.body.style.color = '#F4F4F4'
 }
 
 optionsToggle.onclick = () => {
