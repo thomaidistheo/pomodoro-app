@@ -85,8 +85,6 @@ function countDown() {
             if (timeSec <= 0) {
                 stopCountDown()
             }
-            console.log(timeSec)
-            console.error(seconds)
 
             //DOM changes when timer is started
             optionsMenu.classList.add('hide-options')
