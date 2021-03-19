@@ -14,6 +14,9 @@ let optionTwo = document.getElementById('option-two')
 let optionThree = document.getElementById('option-three')
 let optionFour = document.getElementById('option-four')
 
+//audio
+let completeSound = document.getElementById('bell-sound')
+
 removeDisabled = () => {
     startBtn.removeAttribute('disabled')
 }
@@ -28,7 +31,7 @@ let timeMin
 let timeSec
 
 optionOne.onclick = () => {
-    timeMin = 0.1
+    timeMin = 15
     timeSec = (timeMin * 60)-1
 
     displaySelectedTimer()
@@ -69,6 +72,7 @@ function resetDOM() {
 function stopCountDown() {
     clearInterval(startTimer)
     resetDOM()
+    completeSound.play()
 }
 
 function countDown() {
