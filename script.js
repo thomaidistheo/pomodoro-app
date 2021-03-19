@@ -31,7 +31,7 @@ let timeMin
 let timeSec
 
 optionOne.onclick = () => {
-    timeMin = 15
+    timeMin = 0.1
     timeSec = (timeMin * 60)-1
 
     displaySelectedTimer()
@@ -72,7 +72,6 @@ function resetDOM() {
 function stopCountDown() {
     clearInterval(startTimer)
     resetDOM()
-    completeSound.play()
 }
 
 function countDown() {
@@ -81,12 +80,20 @@ function countDown() {
         alert('vale xrono prwta ougkane')  
     } else {
         startTimer = setInterval(() => {
+            //DOM changes when timer is started
+            optionsMenu.classList.add('hide-options')
+            document.body.style.backgroundColor = '#000'
+            document.body.style.color = '#F4F4F4'
+            
             let minutes = Math.floor(timeSec/60)
             let seconds = (timeSec % 60)
-
+            
             //add a 0 in front of single digit numbers
             minutes = minutes < 10 ? '0' + minutes : minutes
             seconds = seconds < 10 ? '0' + seconds : seconds
+            
+            //update browser tab title
+            document.title = `${minutes}:${seconds}`
             
             //display time left
             mins.innerHTML = `${minutes}`
@@ -95,11 +102,11 @@ function countDown() {
             //stop the countdown 
             if (timeSec <= 0) {
                 stopCountDown()
+                completeSound.play()
             }
 
             timeSec--
             
-            document.title = `${minutes}:${seconds}`
         }, 1000)
     }
 
@@ -112,11 +119,6 @@ function countDown() {
 startBtn.onclick = () => {
     countDown()
     startBtn.setAttribute('disabled', "")
-
-    //DOM changes when timer is started
-    optionsMenu.classList.add('hide-options')
-    document.body.style.backgroundColor = '#000'
-    document.body.style.color = '#F4F4F4'
 }
 
 optionsToggle.onclick = () => {
