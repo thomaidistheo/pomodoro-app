@@ -59,6 +59,7 @@ body {
           box-shadow: 5px 5px #4558D3;
   height: 100px;
   width: 300px;
+  z-index: 1;
 }
 
 .clock__mins {
@@ -114,7 +115,6 @@ body {
 
 .hide-options {
   margin-right: 0;
-  z-index: -1;
 }
 
 .start-btn {
