@@ -7,14 +7,127 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-}
-
-html {
-  background-color: #F4F4F4;
-}
-
-h1 {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #F4F4F4;
   color: #454545;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 100px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.container h1 {
+  margin-bottom: 50px;
+}
+
+.clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  color: #F4F4F4;
+  background: #454545;
+  -webkit-box-shadow: 5px 5px #4558D3;
+          box-shadow: 5px 5px #4558D3;
+  height: 100px;
+  width: 300px;
+}
+
+.clock__mins {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.clock__secs {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.clock i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.clock i:hover {
+  cursor: pointer;
+}
+
+.options {
+  height: 100px;
+  margin-top: 9px;
+  margin-right: -50px;
+  right: 0;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.options button {
+  background-color: #4558D3;
+  border: none;
+  color: #F4F4F4;
+  padding: 5px 5px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.hide-options {
+  margin-right: 0;
+  z-index: -1;
+}
+
+.start-btn {
+  margin-top: 20px;
+  padding: 10px 30px;
+  border: none;
+  color: #F4F4F4;
+  background-color: #4558D3;
+  -webkit-box-shadow: 3px 3px #454545;
+          box-shadow: 3px 3px #454545;
+}
+
+.start-btn:disabled {
+  background-color: #BCBCBC;
 }
 /*# sourceMappingURL=styles.css.map */

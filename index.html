@@ -5,11 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <h1>
-        Test
-    </h1>
+
+    <h1> Pomodoro Timer ⏱ </h1>
+    <div class="container">
+        <div class="clock">
+            <div class="clock__mins" id="mins">00</div>
+            <div class="clock__secs" id="secs">00</div>
+
+            <i class="fas fa-cog" id="optionsToggle"></i>
+        </div>
+
+        <div class="options hide-options" id="optionsMenu">
+            <button id="option-one">15'</button>
+            <button id="option-two">30'</button>
+            <button id="option-three">45'</button>
+            <button id="option-four">60'</button>
+        </div>
+
+
+    </div>
+
+    <button class="start-btn" id="startBtn">Start</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
