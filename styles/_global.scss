@@ -15,11 +15,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
-    background: $white;
+    background: $black-dark;
     color: $black;
     font-family: 'Roboto', sans-serif;
-
-    padding-top: 100px;
 }
 

@@ -19,16 +19,22 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #F4F4F4;
-  color: #454545;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #191919;
+  color: #262626;
   font-family: 'Roboto', sans-serif;
-  padding-top: 100px;
 }
 
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -39,7 +45,17 @@ body {
 }
 
 .container h1 {
-  margin-bottom: 50px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 100%;
+  background: #262626;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #b99e62;
+  color: #F4F4F4;
+  font-size: 20px;
+  font-weight: 400;
+  z-index: 1;
 }
 
 .clock {
@@ -54,11 +70,9 @@ body {
           justify-content: center;
   position: relative;
   color: #F4F4F4;
-  background: #454545;
-  -webkit-box-shadow: 5px 5px #4558D3;
-          box-shadow: 5px 5px #4558D3;
-  height: 100px;
-  width: 300px;
+  background: #262626;
+  height: 200px;
+  width: 400px;
   z-index: 1;
 }
 
@@ -85,8 +99,7 @@ body {
 }
 
 .options {
-  height: 100px;
-  margin-top: 9px;
+  margin-top: 5px;
   margin-right: -50px;
   right: 0;
   position: absolute;
@@ -97,20 +110,19 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
 
 .options button {
-  background-color: #4558D3;
+  background-color: #b99e62;
   border: none;
   color: #F4F4F4;
   padding: 5px 5px;
   width: 50px;
+  height: 50px;
   cursor: pointer;
+  border-bottom: 1px solid #BCBCBC;
 }
 
 .hide-options {
@@ -128,7 +140,7 @@ body {
 }
 
 .btns-container .start-btn {
-  background-color: #4558D3;
+  background-color: #b99e62;
 }
 
 .btns-container .start-btn:disabled {
@@ -136,6 +148,6 @@ body {
 }
 
 .btns-container .reset-btn {
-  background-color: #454545;
+  background-color: #262626;
 }
 /*# sourceMappingURL=styles.css.map */
