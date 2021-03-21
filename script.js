@@ -31,7 +31,7 @@ let timeMin
 let timeSec
 
 optionOne.onclick = () => {
-    timeMin = 0.1
+    timeMin = 15
     timeSec = (timeMin * 60)-1
 
     displaySelectedTimer()
