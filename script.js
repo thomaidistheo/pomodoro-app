@@ -58,11 +58,8 @@ optionFour.onclick = () => {
     displaySelectedTimer()
 }
 
-let startTimer = null
 
 function resetDOM() {
-    document.body.style.backgroundColor = '#F4F4F4'
-    document.body.style.color = '#454545'
     document.title = 'Pomodoro App'
     mins.innerHTML = '00'
     secs.innerHTML = '00'
@@ -74,11 +71,16 @@ function stopCountDown() {
     resetDOM()
 }
 
+let startTimer = null
+
 function countDown() {
     //in case no time setting is selected, display message
     if (!timeMin){
         alert('vale xrono prwta ougkane')  
     } else {
+        startBtn.setAttribute('disabled', "")
+        optionsMenu.classList.toggle('hide-options')
+
         startTimer = setInterval(() => {
             //DOM changes when timer is started
             optionsMenu.classList.add('hide-options')
@@ -118,7 +120,8 @@ function countDown() {
 
 startBtn.onclick = () => {
     countDown()
-    startBtn.setAttribute('disabled', "")
+    
+   
 }
 
 optionsToggle.onclick = () => {
