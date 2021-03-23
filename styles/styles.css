@@ -28,7 +28,8 @@ body {
 }
 
 .gradient-animation {
-  background: linear-gradient(181deg, #262626, #bea168, #262626, #262626, #262626, #bea168);
+  background: -webkit-gradient(linear, left top, left bottom, from(#191919), color-stop(#b99e62), color-stop(#191919), color-stop(#191919), color-stop(#191919), to(#b99e62));
+  background: linear-gradient(180deg, #191919, #b99e62, #191919, #191919, #191919, #b99e62);
   background-size: 1200% 1200%;
   -webkit-animation: BackgroundAnimation 37s ease infinite;
           animation: BackgroundAnimation 37s ease infinite;

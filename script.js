@@ -67,6 +67,9 @@ function resetDOM() {
     mins.innerHTML = '00'
     secs.innerHTML = '00'
     timeSec=0;
+
+    document.body.classList.remove('gradient-animation')
+    optionsMenu.classList.remove('hide-options')
 }
 
 function stopCountDown() {
@@ -119,6 +122,7 @@ function countDown() {
     resetBtn.onclick = () => {
         resetDOM()
         stopCountDown()
+        removeDisabled()
     }
 }
 

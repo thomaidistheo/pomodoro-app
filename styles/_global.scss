@@ -23,7 +23,7 @@ body {
 }
 
 .gradient-animation {
-    background: linear-gradient(181deg, #262626, #bea168, #262626, #262626, #262626, #bea168);
+    background: linear-gradient(180deg, $black-dark, $main-clr, $black-dark, $black-dark, $black-dark, $main-clr);
     background-size: 1200% 1200%;
 
     animation: BackgroundAnimation 37s ease infinite;
