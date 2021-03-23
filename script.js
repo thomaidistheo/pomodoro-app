@@ -67,6 +67,9 @@ optionFour.onclick = () => {
 customTimerForm.onsubmit = (e) => {
     e.preventDefault()
 
+    if (customTimerInput.value == 0) {
+        errorMsg.classList.remove('show-error')
+    }
     timeMin = customTimerInput.value
     timeSec = (timeMin * 60) - 1
 
@@ -88,8 +91,6 @@ stopCountDown = () => {
     clearInterval(startTimer)
     resetDOM()
 }
-
-
 
 let startTimer = null
 

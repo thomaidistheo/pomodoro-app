@@ -161,18 +161,22 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 150px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 120px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .options form input {
-  width: 70px;
   height: 25px;
   background: none;
   border: none;
   border-bottom: 1px solid #BCBCBC;
+}
+
+.options form input[type=number] {
+  width: 35px;
+  text-align: center;
 }
 
 .options form input[type=number]::-webkit-inner-spin-button {
@@ -183,6 +187,8 @@ body {
   border-bottom: none;
   background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
+  padding: 2px 5px;
+  color: #262626;
 }
 
 .hide-options {

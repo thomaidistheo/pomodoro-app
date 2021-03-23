@@ -80,24 +80,30 @@
 
     form {
         display: flex;
-        width: 150px;
-        justify-content: space-between;
+        width: 120px;
+        justify-content: space-evenly;
 
         input {
-            width: 70px;
             height: 25px;
             background: none;
             border: none;
             border-bottom: 1px solid $gray;
     
-            &[type=number]::-webkit-inner-spin-button {
-                opacity: 0.3;
+            &[type=number]{
+                width: 35px;
+                text-align: center;
+                
+                &::-webkit-inner-spin-button {
+                    opacity: 0.3;
+                }
             }
     
             &[type=submit] {
                 border-bottom: none;
                 background:rgba(255, 255, 255, 0.2);
                 cursor: pointer;
+                padding: 2px 5px;
+                color: $black;
             }
         }
         
