@@ -10,7 +10,6 @@
 </head>
 <body>
 
-
     <div class="container">
         <h1> Pomodoro Timer ⏱ </h1>
         <div class="clock">
@@ -25,6 +24,12 @@
             <button id="option-two">30'</button>
             <button id="option-three">45'</button>
             <button id="option-four">60'</button>
+            <button id="option-five" disabled>
+                <form id="custom-timer">
+                    <input type="number" id="custom-timer-input" min="1" max="240">
+                    <input type="submit"></input>
+                </form>
+            </button>
         </div>
 
         <div class="error-message" id="errorMsg">
@@ -36,6 +41,14 @@
     <div class="btns-container">
         <button class="start-btn" id="startBtn">Start</button>
         <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="stats-container">
+        <h2>Total Focus Time:</h2>
+        <div class="stats">
+            <p><span>72</span>hours</p>
+            <p><span>33</span>minutes</p>
+        </div>
     </div>
 
     <audio id="bell-sound" src="assets/sounds/bell-sound.wav"></audio>

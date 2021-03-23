@@ -15,6 +15,8 @@ let optionOne = document.getElementById('option-one')
 let optionTwo = document.getElementById('option-two')
 let optionThree = document.getElementById('option-three')
 let optionFour = document.getElementById('option-four')
+let customTimerForm = document.getElementById('custom-timer')
+let customTimerInput = document.getElementById('custom-timer-input')
 
 //audio
 let completeSound = document.getElementById('bell-sound')
@@ -30,39 +32,49 @@ displaySelectedTimer = () => {
     removeDisabled()
 }
 
+//timer options 
 let timeMin
 let timeSec
 
 optionOne.onclick = () => {
     timeMin = 15
-    timeSec = (timeMin * 60)-1
+    timeSec = (timeMin * 60) - 1
 
     displaySelectedTimer()
 }
 
 optionTwo.onclick = () => {
     timeMin = 30
-    timeSec = (timeMin * 60)-1
+    timeSec = (timeMin * 60) - 1
 
     displaySelectedTimer()
 }
 
 optionThree.onclick = () => {
     timeMin = 45
-    timeSec = (timeMin * 60)-1
+    timeSec = (timeMin * 60) - 1
 
     displaySelectedTimer()
 }
 
 optionFour.onclick = () => {
     timeMin = 60
-    timeSec = (timeMin * 60)-1
+    timeSec = (timeMin * 60) - 1
 
     displaySelectedTimer()
 }
 
+customTimerForm.onsubmit = (e) => {
+    e.preventDefault()
 
-function resetDOM() {
+    timeMin = customTimerInput.value
+    timeSec = (timeMin * 60) - 1
+
+    displaySelectedTimer()
+}
+
+// reset dom elements after timer ends
+resetDOM = () => {
     document.title = 'Pomodoro App'
     mins.innerHTML = '00'
     secs.innerHTML = '00'
@@ -72,14 +84,16 @@ function resetDOM() {
     optionsMenu.classList.remove('hide-options')
 }
 
-function stopCountDown() {
+stopCountDown = () => {
     clearInterval(startTimer)
     resetDOM()
 }
 
+
+
 let startTimer = null
 
-function countDown() {
+countDown = () => {
     //in case no time setting is selected, display message
     if (!timeMin){
         errorMsg.classList.add('show-error')
@@ -118,12 +132,12 @@ function countDown() {
             
         }, 1000)
     }
+}
 
-    resetBtn.onclick = () => {
-        resetDOM()
-        stopCountDown()
-        removeDisabled()
-    }
+resetBtn.onclick = () => {
+    resetDOM()
+    stopCountDown()
+    removeDisabled()
 }
 
 startBtn.onclick = () => {
