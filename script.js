@@ -8,6 +8,8 @@ const optionsToggle = document.getElementById('optionsToggle')
 const resetBtn = document.getElementById('resetBtn')
 
 //timer options
+const errorMsg = document.getElementById('errorMsg')
+const errorBtn = document.getElementById('errorBtn')
 const optionsMenu = document.getElementById('optionsMenu')
 let optionOne = document.getElementById('option-one')
 let optionTwo = document.getElementById('option-two')
@@ -19,6 +21,7 @@ let completeSound = document.getElementById('bell-sound')
 
 removeDisabled = () => {
     startBtn.removeAttribute('disabled')
+    errorMsg.classList.remove('show-error')
 }
 
 //display selected option in the timer
@@ -76,10 +79,11 @@ let startTimer = null
 function countDown() {
     //in case no time setting is selected, display message
     if (!timeMin){
-        alert('vale xrono prwta ougkane')  
+        errorMsg.classList.add('show-error')
     } else {
         startBtn.setAttribute('disabled', "")
         optionsMenu.classList.toggle('hide-options')
+        document.body.classList.add('gradient-animation')
 
         startTimer = setInterval(() => {
             //DOM changes when timer is started
@@ -120,11 +124,13 @@ function countDown() {
 
 startBtn.onclick = () => {
     countDown()
-    
-   
 }
 
 optionsToggle.onclick = () => {
     optionsMenu.classList.toggle('hide-options')
+}
+
+errorBtn.onclick = () => {
+    errorMsg.classList.remove('show-error')
 }
 

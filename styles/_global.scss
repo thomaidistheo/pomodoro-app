@@ -22,3 +22,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.gradient-animation {
+    background: linear-gradient(181deg, #262626, #bea168, #262626, #262626, #262626, #bea168);
+    background-size: 1200% 1200%;
+
+    animation: BackgroundAnimation 37s ease infinite;
+}
+
+@keyframes BackgroundAnimation {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+

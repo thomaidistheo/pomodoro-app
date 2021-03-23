@@ -27,6 +27,37 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.gradient-animation {
+  background: linear-gradient(181deg, #262626, #bea168, #262626, #262626, #262626, #bea168);
+  background-size: 1200% 1200%;
+  -webkit-animation: BackgroundAnimation 37s ease infinite;
+          animation: BackgroundAnimation 37s ease infinite;
+}
+
+@-webkit-keyframes BackgroundAnimation {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+
+@keyframes BackgroundAnimation {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,7 +72,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
 }
 
 .container h1 {
@@ -129,14 +159,39 @@ body {
   margin-top: -50px;
 }
 
-.btns-container {
-  margin-top: 20px;
+.error-message {
+  width: 100%;
+  padding: 5px 20px;
+  background: #EF7373;
+  color: #F4F4F4;
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.error-message i {
+  cursor: pointer;
+}
+
+.show-error {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .btns-container button {
   padding: 10px 30px;
   border: none;
   color: #F4F4F4;
+  cursor: crosshair;
 }
 
 .btns-container .start-btn {

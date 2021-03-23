@@ -6,9 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-
-
+    
     h1 {
         align-self: flex-start;
         width: 100%;
@@ -86,13 +84,34 @@
     margin-top: -50px;
 }
 
+.error-message {
+    width: 100%;
+    padding: 5px 20px;
+    background: $error-clr;
+    color: $white;
+    transform: translateY(-80px);
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    i {
+        cursor: pointer;
+    }
+}
+
+.show-error {
+    transform: translateY(0);
+}
+
 .btns-container {
-    margin-top: 20px;
     
     button {
         padding: 10px 30px;
         border: none;
         color: $white;
+        cursor: crosshair;
     }
 
     .start-btn {
